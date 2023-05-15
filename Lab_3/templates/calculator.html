@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Калькулятор</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Калькулятор сложных процентов</h1>
+        <div class="form-container">
+            <form method="post">
+                <label for="principal">Основная сумма:</label>
+                <input type="number" id="principal" name="principal" required><br><br>
+
+                <label for="rate">Процентная ставка:</label>
+                <input type="number" id="rate" name="rate" required><br><br>
+
+                <label for="time">Время (в годах):</label>
+                <input type="number" id="time" name="time" required><br><br>
+
+                <input type="submit" value="Рассчитать">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

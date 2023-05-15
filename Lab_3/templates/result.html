@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Калькулятор - результат</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Результат</h1>
+        <div class="result-container">
+            <p><span class="result-label">Сумма:</span> <span class="result-value">{{ amount }}</span></p>
+            <p><span class="result-label">Выгода:</span> <span class="result-value">{{ interest }}</span></p>
+        </div>
+    <button onclick="goBack()" class="button-back">Назад</button>
+    </div>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>
+
