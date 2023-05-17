@@ -19,6 +19,9 @@ def calculator():
             interest = round(amount - principal, 2)
 
         result = {
+            'principal': principal,
+            'rate': rate,
+            'time': time,
             'amount': amount,
             'interest': interest
         }

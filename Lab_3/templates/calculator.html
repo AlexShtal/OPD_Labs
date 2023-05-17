@@ -5,36 +5,31 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <div class="container">
-        <h1>Калькулятор сложных процентов</h1>
-        <div class="form-container">
-            <form method="post">
-                <label for="principal">Основная сумма:</label>
-                <input type="number" id="principal" name="principal" required><br><br>
+<div class="container">
+    <h1>Калькулятор сложных процентов</h1>
+    <div class="form-container">
+        <form method="post">
+            <label for="principal">Основная сумма:</label>
+            <input type="number" id="principal" name="principal" value={{result.principal}} required><br><br>
 
-                <label for="rate">Процентная ставка:</label>
-                <input type="number" id="rate" name="rate" required><br><br>
+            <label for="rate">Процентная ставка:</label>
+            <input type="number" id="rate" name="rate" value={{result.rate}} required><br><br>
 
-                <label for="time">Время (в годах):</label>
-                <input type="number" id="time" name="time" required><br><br>
+            <label for="time">Время (в годах):</label>
+            <input type="number" id="time" name="time" value={{result.time}} required><br><br>
 
-                <input type="submit" value="Рассчитать">
-            </form>
+            <input type="submit" value="Рассчитать">
+        </form>
 
-            {% if result %}
-                <div class="result-container">
-                    <h2>Результат</h2>
-                    <p><span class="result-label">Сумма:</span> <span class="result-value">{{ result.amount }}</span></p>
-                    <p><span class="result-label">Выгода:</span> <span class="result-value">{{ result.interest }}</span></p>
-                </div>
-            {% endif %}
+        {% if result %}
+
+        <div class="result-container">
+            <h2>Результат</h2>
+            <p><span class="result-label">Сумма:</span> <span class="result-value">{{ result.amount }}</span></p>
+            <p><span class="result-label">Выгода:</span> <span class="result-value">{{ result.interest }}</span></p>
         </div>
+        {% endif %}
     </div>
-
-    <script>
-        function goBack() {
-            window.history.back();
-        }
-    </script>
+</div>
 </body>
 </html>
